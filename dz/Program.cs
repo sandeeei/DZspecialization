@@ -12,3 +12,18 @@ string[] DelPunctuatMark(string str)
 }
 
 
+string[] ArreyWords(string[] str)
+{
+    int maxLength = 3;
+    string newStr = string.Empty;
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (str[i].Length <= maxLength)
+        {
+            newStr = newStr + str[i] + " ;";
+        }
+    }
+    newStr = newStr.Trim();
+    return newStr.Split(" ");
+}
+
