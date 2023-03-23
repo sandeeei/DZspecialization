@@ -1,6 +1,11 @@
 ﻿Console.WriteLine("Введите текст :  ");
 string text = Console.ReadLine();
 
+/// <summary>
+/// Метод удаляет знаки препинания и преобразует текст в массив
+/// </summary>
+/// <param name="str">Текст </param>
+/// <returns>МСтроковый массив</returns>
 string[] DelPunctuatMark(string str)
 {
     string[] delMark = { ".", ",", "(", ")" };
@@ -11,10 +16,13 @@ string[] DelPunctuatMark(string str)
     return str.Split(" ");
 }
 
-
-string[] ArreyWords(string[] str)
+/// <summary>
+/// Метод запоминае слова длиной не превышающей заданой длины
+/// </summary>
+/// <param name="str"></param>
+/// <returns></returns>
+string[] ArreyWords(string[] str,int maxLength)
 {
-    int maxLength = 3;
     string newStr = string.Empty;
     for (int i = 0; i < str.Length; i++)
     {
@@ -30,5 +38,5 @@ string[] ArreyWords(string[] str)
 Console.WriteLine($"Текст который вы ввели: \n");
 Console.WriteLine($"{text} \n");
 Console.WriteLine("Слова не превышающие длину 3 символа в данном тексте");
-string[] array = ArreyWords(DelPunctuatMark(text));
+string[] array = ArreyWords(DelPunctuatMark(text),3);
 Console.Write($"\n {string.Join(' ', array)}");
